@@ -30,4 +30,3 @@ vs. what requires custom detection rules.
 - [ ] Phase 4: Write custom detection rules
 - [ ] Phase 5: Final write-up and summary table
 
-## 📁 Repo Structure
