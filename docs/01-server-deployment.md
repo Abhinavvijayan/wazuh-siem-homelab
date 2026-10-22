@@ -46,5 +46,30 @@ an attack occurred even if no alert fired).
 ```
 3. Created a new index pattern `wazuh-archives-*` in the Wazuh dashboard to view archived events
 
+### Creating the Archives Index Pattern
+
+After enabling archives in `ossec.conf` and `filebeat.yml`, created a new 
+index pattern in the dashboard so archived events are viewable in Discover.
+
+1. Navigated to **Dashboards Management → Index patterns**
+   
+   ![Dashboards Management menu](../screenshots/dashboards-management-menu.png)
+
+2. Clicked **Create index pattern**
+   
+   ![Create index pattern button](../screenshots/create-index-pattern-button.png)
+
+3. Entered `wazuh-archives*` — confirmed it matched the `wazuh-archives-4.x-2026.10.21` index
+   
+   ![Index pattern matching source](../screenshots/create-archives-pattern-step1.png)
+
+4. Selected `timestamp` as the time field and created the pattern
+   
+   ![Time field configuration](../screenshots/create-archives-pattern-step2.png)
+
+`wazuh-archives-*` pattern now available in Discover, alongside the 
+default `wazuh-alerts-*` pattern, allowing review of all events — not just 
+those that triggered alerts.
+
 ## Result
 Wazuh server (manager, indexer, dashboard) successfully deployed on Ubuntu Server 24.04. Dashboard accessible via browser from host. Archives enabled to capture full event logs for later analysis, not just alerted events.
